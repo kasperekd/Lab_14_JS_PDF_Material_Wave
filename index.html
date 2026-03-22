@@ -1,13 +1,86 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="./js/main.js"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume // Ivan Syrovar // CyberCheese 2026</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <!-- Панель управления (не печатается) -->
+    <div class="no-print controls">
+        <button id="download-btn" class="btn-neon">СКАЧАТЬ PDF</button>
+        <button id="upload-trigger" class="btn-neon">СМЕНИТЬ АВАТАР</button>
+        <input type="file" id="photo-input" accept="image/*" hidden>
+    </div>
+
+    <!-- Основной контейнер резюме -->
+    <div id="resume-page" class="resume-container">
+        
+        <!-- Левая колонка: Фото и Навыки -->
+        <aside class="sidebar">
+            <div class="photo-box">
+                <img id="avatar" src="img/1774099146.png" alt="Avatar">
+                <div class="scanline"></div>
+            </div>
+
+            <div class="section-sidebar">
+                <h3 class="cyan">UPLINK // КОНТАКТЫ</h3>
+                <p><a href="https://web.karasik.space" target="_blank" contenteditable="true" id="c1">NET: web.karasik.space</a></p>
+                <p><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" contenteditable="true" id="c2">MAX: @syrovar_2026</a></p>
+                <p contenteditable="true" id="c3">LOC: Neo-Siberia, Sector 7</p>
+            </div>
+
+            <div class="section-sidebar">
+                <h3 class="yellow">AUGMENTATIONS // СТЕК</h3>
+                <div class="skill-bar"><span style="width: 95%"></span><p contenteditable="true">React / Next.js</p></div>
+                <div class="skill-bar"><span style="width: 90%"></span><p contenteditable="true">TypeScript</p></div>
+                <div class="skill-bar"><span style="width: 85%"></span><p contenteditable="true">Three.js / WebGL</p></div>
+                <div class="skill-bar"><span style="width: 80%"></span><p contenteditable="true">Node.js</p></div>
+            </div>
+        </aside>
+
+        <!-- Правая колонка: Опыт и Био -->
+        <main class="main-content">
+            <header class="header">
+                <h1 contenteditable="true" id="name">ИВАН <span class="yellow">«СЫРОВАР»</span> ПЕТРОВ</h1>
+                <h2 contenteditable="true" id="role" class="cyan">SENIOR FRONTEND // UI SURVIVOR</h2>
+            </header>
+
+            <section class="bio">
+                <h3 class="label">SUMMARY // ЛИЧНОЕ ДЕЛО</h3>
+                <p contenteditable="true" id="summary">
+                    Ветеран Сибирских сырных гонок. После гравитационной травмы в 2026-м перешел в разработку нейроинтерфейсов. Специализируюсь на создании неубиваемых UI, которые не лагают даже при 40% потере пакетов нейросвязи.
+                </p>
+            </section>
+
+            <section class="experience">
+                <h3 class="label">MISSIONS // ОПЫТ РАБОТЫ</h3>
+                
+                <div class="exp-item">
+                    <h4 contenteditable="true">NEON CHEDDARS // Lead Dev (2026 - Present)</h4>
+                    <p contenteditable="true">Оптимизировал систему синхронизации VR-трасс. Сократил задержку рендеринга на 15ms. Внедрил систему деградации интерфейса при ЭМИ-ударах.</p>
+                </div>
+
+                <div class="exp-item">
+                    <h4 contenteditable="true">SIBERIA TECH // Frontend Guard (2026 - 2026)</h4>
+                    <p contenteditable="true">Разработка приборных панелей для гоночных болидов. Использовал Three.js для визуализации физики сырного скольжения в реальном времени.</p>
+                </div>
+            </section>
+
+            <section class="education">
+                <h3 class="label">TRAINING // ОБУЧЕНИЕ</h3>
+                <p contenteditable="true">Cyber-Siberian State University // Faculty of Neural Code (2018 - 2077)</p>
+            </section>
+
+            <div class="footer-decor">
+                <span>VERIFIED BY NEON-CORP</span>
+                <span class="barcode">||||| | || |||| |</span>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
 </html>
